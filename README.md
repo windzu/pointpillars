@@ -1,0 +1,2 @@
+# pointpillars
+基于OpenPCDet特定版本的专门用于训练pointpillars的工程
