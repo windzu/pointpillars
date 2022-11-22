@@ -1,0 +1,23 @@
+Language: Cpp
+BasedOnStyle: Google
+ColumnLimit: 79
+IncludeCategories:
+  # C System headers
+  - Regex: '^<.*\.h>'
+    Priority: 1
+  - Regex: '<([A-Za-z0-9\Q/-_\E])+>'
+  # Headers in <> without extension; e.g. C++ standard
+    Priority: 2
+  # Eigen headers are not std C++ headers
+  - Regex: '<Eigen/([A-Za-z0-9\Q/-_\E])+>'
+    Priority: 3
+  # Headers in "" with file extension; e.g. from the same or another package
+  - Regex: '"([A-Za-z0-9.\Q/-_\E])+"'
+    Priority: 3
+  # Other Packages
+  - Regex: '^<.*/.*\.h.*>'
+    Priority: 3
+  # Messages
+  - Regex: '.*_msgs/.*\.hpp'
+    Priority: 4
+  

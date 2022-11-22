@@ -1,0 +1,10 @@
+<launch>
+    <node pkg="det3d" type="det3d" name="det3d" output="screen">
+        <!-- (almost) STATIC PARAMS -->
+        <env name="ROSCONSOLE_CONFIG_FILE" value="$(find det3d)/../../config/rosconsole.conf"/>
+        <param name="topic" value="/LIDAR_TOP"/>
+        <param name="result_topic" value="/LIDAR_TOP/detected_objects"/>
+        <param name="model_path" value="$(find det3d)/model/latest.onnx"/>
+        <param name="score_threshold" value="0.7"/>
+    </node>
+</launch>

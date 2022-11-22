@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>det3d</name>
+  <version>1.12.0</version>
+  <description>det3d</description>
+
+  <maintainer email="windzu1@gmail.com">windzu</maintainer>
+  <license>Apache 2</license>
+
+  <buildtool_depend>catkin</buildtool_depend> 
+
+  <depend>roscpp</depend>
+  <depend>roslib</depend>
+  <depend>std_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>tf2</depend>
+  <depend>autoware_msgs</depend>
+</package>
