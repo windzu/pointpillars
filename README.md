@@ -16,6 +16,9 @@
 | 环境二 |         |         |      |       |      |
 
 1. 创建conda环境
+
+> Note: 该环境需要使用spconv,其版本需与cuda保持一致，此处cuda为11.3，故使用spconv-cu113
+
 ```bash
 export CONDA_ENV_NAME=OpenPCDet && \
 export PYTHON_VERSION=3.8 && \
