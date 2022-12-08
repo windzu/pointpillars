@@ -23,6 +23,7 @@ wadda ros # pip3 install wadda
 
 - Jeston Orin : 21.6ms
 - Jeston Orin(Clocks Running) : 14.7ms
+- Jeston Xavier NX : 49ms
 - RTX2080 : 15.5ms
 - RTX3050 : 21ms
 - RTX3090 : 6.9ms
