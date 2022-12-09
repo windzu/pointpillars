@@ -5,6 +5,6 @@
         <param name="topic" value="/LIDAR_TOP"/>
         <param name="result_topic" value="/LIDAR_TOP/detected_objects"/>
         <param name="model_path" value="$(find det3d)/model/latest.onnx"/>
-        <param name="score_threshold" value="0.7"/>
+        <param name="score_threshold" value="0.3"/>
     </node>
 </launch>

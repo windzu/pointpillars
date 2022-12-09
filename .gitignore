@@ -9,7 +9,7 @@ src/det3d/model/latest.onnx.cache
 data
 *.pyc
 *.so
-*.onnx
+*.onnx.cache
 
 # Build and Release Folders
 bin-debug/

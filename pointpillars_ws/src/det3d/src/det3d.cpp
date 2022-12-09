@@ -87,7 +87,6 @@ void Det3D::callback(const sensor_msgs::PointCloud2ConstPtr &msg) {
   ROS_DEBUG_STREAM("TIME: pointpillar: " << elapsed_time_ << " ms.");
   checkCudaErrors(cudaFree(points_data));
 
-  ROS_DEBUG_STREAM("Bndbox objs: " << nms_pred_.size());
   // std::string save_file_name = Save_Dir + index_str + ".txt";
   pub_box_pred(nms_pred_);
 
@@ -154,10 +153,11 @@ void Det3D::pub_box_pred(std::vector<Bndbox> boxes) {
 
     autoware_msgs::DetectedObject obj;
     obj.header = objects.header;
+    obj.valid = true;
+    obj.score = box.score;
     obj.label = box.id;  // class id
     // obj.label = "car";  // debug
 
-    obj.score = box.score;
     obj.pose.position.x = box.x;
     obj.pose.position.y = box.y;
     obj.pose.position.z = box.z;
@@ -176,6 +176,9 @@ void Det3D::pub_box_pred(std::vector<Bndbox> boxes) {
     obj.pose.orientation = tf2::toMsg(quat_tf);
     objects.objects.push_back(obj);
   }
+
+  ROS_DEBUG_STREAM("Bndbox objs: " << objects.objects.size());
+
   pub_.publish(objects);
   return;
 }
